@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Submissions</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-card *ngFor="let question of data; index as i">
+        <ion-card-header>
+          <ion-card-subtitle>{{question.question_title}}</ion-card-subtitle>
+          <ion-card-title>{{question.question}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            Score : {{question.answer_score}}
+          </ion-item>
+          <ion-item>
+            Text : {{question.answer_text}}
+          </ion-item>
+          <ion-item *ngIf="question.answer_photo1 > 0">
+            <ion-thumbnail slot="start">
+              <img src="http://madushatest.atwebpages.com/download.php?id={{question.id}}&photo=answer_photo1&preview=1">
+            </ion-thumbnail>
+            Photo 1 : {{question.answer_photo1}}mb
+          </ion-item>
+          <ion-item *ngIf="question.answer_photo2 > 0">
+            <ion-thumbnail slot="start">
+              <img src="http://madushatest.atwebpages.com/download.php?id={{question.id}}&photo=answer_photo2&preview=1">
+            </ion-thumbnail>
+            Photo 2 : {{question.answer_photo2}}mb
+          </ion-item>
+          <ion-item *ngIf="question.answer_photo3 > 0">
+            <ion-thumbnail slot="start">
+              <img src="http://madushatest.atwebpages.com/download.php?id={{question.id}}&photo=answer_photo3&preview=1">
+            </ion-thumbnail>
+            Photo 3 : {{question.answer_photo3}}mb
+          </ion-item>
+          <ion-item *ngIf="question.answer_photo4 > 0">
+            <ion-thumbnail slot="start">
+              <img src="http://madushatest.atwebpages.com/download.php?id={{question.id}}&photo=answer_photo4&preview=1">
+            </ion-thumbnail>
+            Photo 4 : {{question.answer_photo4}}mb
+          </ion-item>
+        </ion-card-content>
+        </ion-card>
+    </ion-list>
+  </ion-content>
+</ion-content>

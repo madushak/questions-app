@@ -4,6 +4,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="load($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Submissions</ion-title>
@@ -11,5 +15,15 @@
   </ion-header>
 
   <ion-content class="ion-padding">
+    <ion-list>
+      <ion-card routerLink="{{submission.submission_id}}" *ngFor="let submission of data; index as i">
+        <ion-card-header>
+          <ion-card-subtitle>Submitted on {{submission.submitted_on}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{submission.submission_id}}
+        </ion-card-content>
+        </ion-card>
+    </ion-list>
   </ion-content>
 </ion-content>

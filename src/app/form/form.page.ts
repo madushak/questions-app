@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { Camera, CameraOptions } from '@ionic-native/Camera/ngx';
 import { Network } from '@ionic-native/network/ngx';
 import { ActionSheetController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
-import { DomSanitizer } from '@angular/platform-browser';
-import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { Storage } from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
 
@@ -66,13 +63,14 @@ export class FormPage {
       duration: 5000
     })).present();
 
-    this.http.post('https://webhook.site/929d160e-2f1c-40ac-9a23-925f7ec3fdac', formData).subscribe(async (data) => {
+    this.http.post('http://madushatest.atwebpages.com/post.php', formData).subscribe(async (data) => {
       this.storage.clear();
       (await this.toastController.create({
         message: 'Submission completed',
         duration: 2000
       })).present();
     }, async (error) => {
+      console.log(error);
       (await this.toastController.create({
         message: 'Saved data locally',
         duration: 2000
@@ -84,7 +82,7 @@ export class FormPage {
 
   async submit() {
     this.storage.set('data', this.questions);
-    if (this.internet) {
+    if (this.internet || true) {
       //send data to network and remove from storage
       this.postData(this.questions);
       this.storage.clear();

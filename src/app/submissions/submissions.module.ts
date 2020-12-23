@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { SubmissionsPage as SubmissionsPage } from './submissions.page';
 
 import { SubmissionsPageRoutingModule } from './submissions-routing.module';
+import { SubmissionDetailsPage } from './submission-details.page';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { SubmissionsPageRoutingModule } from './submissions-routing.module';
     FormsModule,
     SubmissionsPageRoutingModule
   ],
-  declarations: [SubmissionsPage]
+  declarations: [SubmissionsPage, SubmissionDetailsPage]
 })
 export class SubmissionsPageModule {}
