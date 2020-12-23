@@ -12,7 +12,7 @@ import { environment } from '../../environments/environment'
 })
 export class FormPage {
   questions: any[] = [];
-  internet: boolean = false;
+  internet: boolean = true;
   file: File;
 
   /**

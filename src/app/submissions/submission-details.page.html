@@ -31,25 +31,25 @@
             <ion-thumbnail slot="start">
               <img src="{{api}}/download.php?id={{question.id}}&photo=answer_photo1&preview=1">
             </ion-thumbnail>
-            Photo 1 : {{question.answer_photo1}}mb
+            Photo 1 : {{question.answer_photo1}}mb - <a href="{{api}}/download.php?id={{question.id}}&photo=answer_photo1">Download</a>
           </ion-item>
           <ion-item *ngIf="question.answer_photo2 > 0">
             <ion-thumbnail slot="start">
               <img src="{{api}}/download.php?id={{question.id}}&photo=answer_photo2&preview=1">
             </ion-thumbnail>
-            Photo 2 : {{question.answer_photo2}}mb
+            Photo 2 : {{question.answer_photo2}}mb - <a href="{{api}}/download.php?id={{question.id}}&photo=answer_photo2">Download</a>
           </ion-item>
           <ion-item *ngIf="question.answer_photo3 > 0">
             <ion-thumbnail slot="start">
               <img src="{{api}}/download.php?id={{question.id}}&photo=answer_photo3&preview=1">
             </ion-thumbnail>
-            Photo 3 : {{question.answer_photo3}}mb
+            Photo 3 : {{question.answer_photo3}}mb - <a href="{{api}}/download.php?id={{question.id}}&photo=answer_photo3">Download</a>
           </ion-item>
           <ion-item *ngIf="question.answer_photo4 > 0">
             <ion-thumbnail slot="start">
               <img src="{{api}}/download.php?id={{question.id}}&photo=answer_photo4&preview=1">
             </ion-thumbnail>
-            Photo 4 : {{question.answer_photo4}}mb
+            Photo 4 : {{question.answer_photo4}}mb - <a href="{{api}}/download.php?id={{question.id}}&photo=answer_photo4">Download</a>
           </ion-item>
         </ion-card-content>
         </ion-card>
