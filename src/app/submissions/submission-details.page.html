@@ -29,25 +29,25 @@
           </ion-item>
           <ion-item *ngIf="question.answer_photo1 > 0">
             <ion-thumbnail slot="start">
-              <img src="http://madushatest.atwebpages.com/download.php?id={{question.id}}&photo=answer_photo1&preview=1">
+              <img src="{{api}}/download.php?id={{question.id}}&photo=answer_photo1&preview=1">
             </ion-thumbnail>
             Photo 1 : {{question.answer_photo1}}mb
           </ion-item>
           <ion-item *ngIf="question.answer_photo2 > 0">
             <ion-thumbnail slot="start">
-              <img src="http://madushatest.atwebpages.com/download.php?id={{question.id}}&photo=answer_photo2&preview=1">
+              <img src="{{api}}/download.php?id={{question.id}}&photo=answer_photo2&preview=1">
             </ion-thumbnail>
             Photo 2 : {{question.answer_photo2}}mb
           </ion-item>
           <ion-item *ngIf="question.answer_photo3 > 0">
             <ion-thumbnail slot="start">
-              <img src="http://madushatest.atwebpages.com/download.php?id={{question.id}}&photo=answer_photo3&preview=1">
+              <img src="{{api}}/download.php?id={{question.id}}&photo=answer_photo3&preview=1">
             </ion-thumbnail>
             Photo 3 : {{question.answer_photo3}}mb
           </ion-item>
           <ion-item *ngIf="question.answer_photo4 > 0">
             <ion-thumbnail slot="start">
-              <img src="http://madushatest.atwebpages.com/download.php?id={{question.id}}&photo=answer_photo4&preview=1">
+              <img src="{{api}}/download.php?id={{question.id}}&photo=answer_photo4&preview=1">
             </ion-thumbnail>
             Photo 4 : {{question.answer_photo4}}mb
           </ion-item>
