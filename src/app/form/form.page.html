@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Questions</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+
+    <ion-list>
+      <ion-card *ngFor="let question of questions; index as i">
+        <ion-card-header>
+          <ion-card-subtitle>{{question.title}}</ion-card-subtitle>
+          <ion-card-title>{{question.question}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-label>Score</ion-label>
+            <ion-select [(ngModel)]="question.answer.score" okText="Select" cancelText="Dismiss">
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-textarea [(ngModel)]="question.answer.description" clearOnEdit="true"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <input type="file" multiple="true" (change)="onFileChange($event, question.answer)" />
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-button (click)="submit()">Submit</ion-button>
+
+  </ion-content>
+</ion-content>
