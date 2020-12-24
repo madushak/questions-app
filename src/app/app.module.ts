@@ -6,7 +6,6 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { File } from '@ionic-native/file/ngx';
-import { Camera } from '@ionic-native/Camera/ngx';
 import { Network } from '@ionic-native/network/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +21,6 @@ import { AppComponent } from './app.component';
   providers: [
     StatusBar,
     SplashScreen,
-    Camera,
     File,
     Network,
     WebView,
