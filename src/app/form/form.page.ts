@@ -118,6 +118,17 @@ export class FormPage {
   }
 
   /**
+   * Toggle question body. Closes other open questions before opening the clicked one.
+   * 
+   * @param question question object
+   */
+  async toggle(question){
+    let current = question.visible;
+    this.questions.map(a => a.visible = false);
+    question.visible = !current;
+  }
+
+  /**
    * File selector event handler. Converts file data into base64 data string and add to answer context.
    * 
    * @param fileChangeEvent file change event object holds the photos selected from gallery

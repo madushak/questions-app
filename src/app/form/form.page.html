@@ -14,12 +14,12 @@
 
     <ion-list>
       <ion-card *ngFor="let question of questions; index as i">
-        <ion-card-header>
+        <ion-card-header (click)="toggle(question)">
           <ion-card-subtitle>{{question.title}}</ion-card-subtitle>
           <ion-card-title>{{question.question}}</ion-card-title>
         </ion-card-header>
 
-        <ion-card-content>
+        <ion-card-content *ngIf="question.visible">
           <ion-item>
             <ion-label>Score</ion-label>
             <ion-select [(ngModel)]="question.answer.score" okText="Select" cancelText="Dismiss">
